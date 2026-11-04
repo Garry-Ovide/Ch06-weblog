@@ -57,12 +57,22 @@ public class LogfileCreator
      */
     public LogEntry createEntry()
     {
-        int year = 2016;
+        // Generate a random year from 2015 through 2019.
+        int year = 2015 + rand.nextInt(5);
+        
+        // Generate a random month from 1 through 12.
         int month = 1 + rand.nextInt(12);
+        
+         // Generate a random day from 1 through 28.
         // Avoid the complexities of days-per-month.
         int day = 1 + rand.nextInt(28);
+        
+        // Generate a random hour from 0 through 23.
         int hour = rand.nextInt(24);
+        
+        // Generate a random minute from 0 through 59.
         int minute = rand.nextInt(60);
+        
         return new LogEntry(year, month, day, hour, minute);
     }
 

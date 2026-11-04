@@ -81,6 +81,48 @@ public class LogEntry implements Comparable<LogEntry>
         return dataValues[MINUTE];
     }
     
+    
+    /**
+     * Return the year of this log entry.
+     *
+     * @return The year from the log line.
+     */
+    public int getYear()
+    {
+        return dataValues[YEAR];
+    }
+
+    /**
+     * Return the month of this log entry.
+     *
+     * @return The month, between 1 and 12.
+     */
+    public int getMonth()
+    {
+        return dataValues[MONTH];
+    }
+
+    /**
+     * Return the day of the month for this log entry.
+     *
+     * @return The day of the month, between 1 and 31.
+     */
+    public int getDay()
+    {
+        return dataValues[DAY];
+    }
+    
+    /**
+     * Return the day of the week for this log entry.
+     *
+     * @return The day of the week, from 0 (Sunday)
+     *         through 6 (Saturday).
+     */
+    public int getDayOfWeek()
+    {
+        return when.get(Calendar.DAY_OF_WEEK) - 1;
+    }
+    
     /**
      * Create a string representation of the data.
      * This is not necessarily identical with the
